@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend_Client.Views.Client_RaketeerWhenClicked"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid RowDefinitions="Auto,*,Auto" Padding="0">
+
+        <HorizontalStackLayout Grid.Row="0" Margin="16,20,0,10" Spacing="4">
+            <Label Text="&lt;" FontSize="16" TextColor="#E4E7EB" />
+            <Label Text="Back" FontSize="14" TextColor="#E4E7EB" />
+            <HorizontalStackLayout.GestureRecognizers>
+                <TapGestureRecognizer Tapped="BackButton_Tapped" />
+            </HorizontalStackLayout.GestureRecognizers>
+        </HorizontalStackLayout>
+
+        <ScrollView Grid.Row="1" Padding="16,0,16,16">
+            <Border StrokeShape="RoundRectangle 20" BackgroundColor="White" Padding="16">
+                <VerticalStackLayout Spacing="10">
+
+                    <Border StrokeShape="RoundRectangle 12" HeightRequest="220" Stroke="#E0E0E0">
+                        <Image Source="sampleimage.svg" Aspect="AspectFill" />
+                    </Border>
+
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Label Grid.Column="0" Text="Juan Dela Cruz" FontAttributes="Bold" FontSize="16" />
+                    </Grid>
+
+                    <Label Text="Professional Barber" FontSize="13" TextColor="#3C3C3C" />
+                    <Label Text="Purok 1, Barangay Mamatid, Cabuyao, Laguna" FontSize="12" TextColor="#8A8A8A" />
+
+                    <Label Text="Services Offered:" FontAttributes="Bold" FontSize="13" Margin="0,10,0,0" />
+                    <Label Text="• Haircut&#10;• Hair Treatment&#10;• Hair Color" FontSize="12" TextColor="#3C3C3C" />
+
+                    <Label Text="Work Experience:" FontAttributes="Bold" FontSize="13" Margin="0,10,0,0" />
+                    <Label Text="• Mang Joe's Barbershop (2023 - 2024)&#10;• Freelance (2018 - 2023)" FontSize="12" TextColor="#3C3C3C" />
+
+                    <Button Text="View Feedbacks" BackgroundColor="Transparent" TextColor="#5F5E5A" BorderColor="#E0E0E0" BorderWidth="1" Margin="0,10,0,0" />
+
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="10" Margin="0,10,0,0">
+                        <Button Grid.Column="0" Text="Save" BackgroundColor="#1B4D3E" TextColor="White" Clicked="SaveButton_Clicked" />
+                        <Button Grid.Column="1" Text="Bigyan ng Raket!" BackgroundColor="#D6A24A" TextColor="White" Clicked="RaketRequestButton_Clicked" />
+                    </Grid>
+
+                </VerticalStackLayout>
+            </Border>
+        </ScrollView>
+
+        <Grid Grid.Row="2" BackgroundColor="#1B4D3E" HeightRequest="60" ColumnDefinitions="*,*,*,*">
+            <ImageButton Grid.Column="0" Source="home_icon.png" BackgroundColor="Transparent" WidthRequest="24" HeightRequest="24" />
+            <ImageButton Grid.Column="1" Source="devices_icon.png" BackgroundColor="Transparent" WidthRequest="24" HeightRequest="24" />
+            <ImageButton Grid.Column="2" Source="bell_icon.png" BackgroundColor="Transparent" WidthRequest="24" HeightRequest="24" />
+            <ImageButton Grid.Column="3" Source="settings_icon.png" BackgroundColor="Transparent" WidthRequest="24" HeightRequest="24" />
+        </Grid>
+    </Grid>
+</ContentPage>

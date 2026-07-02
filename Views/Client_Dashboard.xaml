@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend_Client.Views.Client_Dashboard"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid>
+
+        <!-- MAIN PAGE -->
+        <Grid RowDefinitions="Auto,*">
+
+            <Border Grid.Row="1"
+                    BackgroundColor="White"
+                    Stroke="Transparent"
+                    Margin="0">
+
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="24,24,0,0"/>
+                </Border.StrokeShape>
+
+                <Grid RowDefinitions="Auto,Auto,*,Auto">
+
+                    <!-- HEADER -->
+                    <Grid Grid.Row="0"
+                          ColumnDefinitions="Auto,*,Auto"
+                          Padding="20,20,20,10"
+                          ColumnSpacing="10">
+
+                        <Border WidthRequest="40"
+                                HeightRequest="40"
+                                Stroke="Transparent"
+                                BackgroundColor="#C9F2C7">
+
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="20"/>
+                            </Border.StrokeShape>
+
+                            <Image Source="avatar_icon.png"
+                                   Aspect="AspectFill"/>
+                        </Border>
+
+                        <Label Grid.Column="1"
+                               Text="Hello, Juan!"
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               VerticalOptions="Center"
+                               TextColor="#2B2B2B"/>
+
+                        <Image Grid.Column="2"
+                           Source="burger.svg"
+                           WidthRequest="25"
+                           HeightRequest="25"
+                           HorizontalOptions="End"
+                           VerticalOptions="Center">
+
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="BurgerButton_Clicked"/>
+                            </Image.GestureRecognizers>
+
+                        </Image>
+                    </Grid>
+
+                    <!-- SEARCH -->
+                    <Border Grid.Row="1"
+                            Margin="20,5,20,10"
+                            HeightRequest="45"
+                            Padding="15,0"
+                            BackgroundColor="#F5F5F5"
+                            Stroke="#E0E0E0">
+
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="22"/>
+                        </Border.StrokeShape>
+
+                        <Grid ColumnDefinitions="*,Auto">
+
+                            <Entry Placeholder="Search for Raketeers"
+                                   BackgroundColor="Transparent"
+                                   PlaceholderColor="#9AA0A6"
+                                   FontSize="14"/>
+
+                            <Image Grid.Column="1"
+                                   Source="search.png"
+                                   WidthRequest="18"
+                                   HeightRequest="18"
+                                   VerticalOptions="Center"/>
+                        </Grid>
+
+                    </Border>
+
+                    <!-- LIST -->
+                    <ScrollView Grid.Row="2">
+
+                        <VerticalStackLayout Padding="20,0,20,10"
+                                             Spacing="16">
+
+                            <Border StrokeThickness="1"
+                                    Stroke="#E5E5E5"
+                                    BackgroundColor="White"
+                                    Padding="12">
+
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="16"/>
+                                </Border.StrokeShape>
+
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Tapped="RaketeerCard_Tapped"
+                                        CommandParameter="1"/>
+                                </Border.GestureRecognizers>
+
+                                <VerticalStackLayout Spacing="10">
+
+                                    <!-- IMAGE -->
+                                    <Border HeightRequest="220"
+                                            Stroke="#E5E5E5">
+
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="12"/>
+                                        </Border.StrokeShape>
+
+                                        <Image Source="sampleimage.png"
+                                               Aspect="AspectFit"/>
+                                    </Border>
+
+                                    <Label Text="Juan Dela Cruz"
+                                           FontAttributes="Bold"
+                                           FontSize="16"
+                                           TextColor="#1F1F1F"/>
+
+                                    <Label Text="Professional Barber"
+                                           FontSize="13"
+                                           TextColor="#555"/>
+
+                                    <Label Text="Purok 1, Barangay Mamatid, Cabuyao, Laguna"
+                                           FontSize="12"
+                                           TextColor="#888"/>
+
+                                </VerticalStackLayout>
+
+                            </Border>
+
+                        </VerticalStackLayout>
+
+                    </ScrollView>
+
+                    <!-- BOTTOM NAV -->
+                    <Grid Grid.Row="3"
+                          HeightRequest="60"
+                          BackgroundColor="#1B4D3E"
+                          ColumnDefinitions="*,*,*,*">
+
+                        <Grid Grid.Column="0"
+                              HorizontalOptions="Center"
+                              VerticalOptions="Center"
+                              WidthRequest="40"
+                              HeightRequest="40">
+
+                            <Image Source="home.svg"
+                                   WidthRequest="20"
+                                   HeightRequest="20"/>
+
+                            <Grid.GestureRecognizers>
+                                <!-- <TapGestureRecognizer Tapped="Home_Tapped"/> -->
+                            </Grid.GestureRecognizers>
+                        </Grid>
+
+                        <Grid Grid.Column="1"
+                              HorizontalOptions="Center"
+                              VerticalOptions="Center"
+                              WidthRequest="40"
+                              HeightRequest="40">
+
+                            <Image Source="inbox.svg"
+                                   WidthRequest="24"
+                                   HeightRequest="24"/>
+
+                            <Grid.GestureRecognizers>
+                                <!-- <TapGestureRecognizer Tapped="Inbox_Tapped"/> -->
+                            </Grid.GestureRecognizers>
+                        </Grid>
+
+                        <Grid Grid.Column="2"
+                              HorizontalOptions="Center"
+                              VerticalOptions="Center"
+                              WidthRequest="40"
+                              HeightRequest="40">
+
+                            <Image Source="notifications.svg"
+                                   WidthRequest="24"
+                                   HeightRequest="24"/>
+
+                            <Grid.GestureRecognizers>
+                                <!-- <TapGestureRecognizer Tapped="Notifications_Tapped"/> -->
+                            </Grid.GestureRecognizers>
+                        </Grid>
+
+                        <Grid Grid.Column="3"
+                              HorizontalOptions="Center"
+                              VerticalOptions="Center"
+                              WidthRequest="40"
+                              HeightRequest="40">
+
+                            <Image Source="settings.svg"
+                                   WidthRequest="20"
+                                   HeightRequest="20"/>
+
+                            <Grid.GestureRecognizers>
+                                <!-- <TapGestureRecognizer Tapped="Settings_Tapped"/> -->
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Border>
+        </Grid>
+
+        <!-- BACKDROP -->
+        <BoxView x:Name="BackdropOverlay"
+                 Color="Black"
+                 Opacity="0.4"
+                 IsVisible="False"
+                 InputTransparent="False">
+
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="BackdropOverlay_Tapped"/>
+            </BoxView.GestureRecognizers>
+
+        </BoxView>
+
+        <!-- SIDE MENU -->
+        <Border x:Name="MenuPanel"
+                WidthRequest="230"
+                BackgroundColor="White"
+                HorizontalOptions="End"
+                VerticalOptions="Fill"
+                Padding="20,50,20,20"
+                TranslationX="230"
+                IsVisible="False">
+
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="16,0,0,16"/>
+            </Border.StrokeShape>
+
+            <Grid RowDefinitions="Auto,*,Auto">
+
+                <Label Grid.Row="0"
+                       Text="Back >"
+                       FontSize="14"
+                       TextColor="#5F5E5A"
+                       Margin="0,0,0,20">
+
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="BackdropOverlay_Tapped"/>
+                    </Label.GestureRecognizers>
+
+                </Label>
+
+                <VerticalStackLayout Grid.Row="1"
+                                     Spacing="18">
+
+                    <Label Text="Activity">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="MenuItem_Activity_Tapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                    <Label Text="Profile">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="MenuItem_Profile_Tapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                    <Label Text="My Raket Request">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="MenuItem_MyRaketRequest_Tapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                    <Label Text="My Reviews"/>
+
+                    <Label Text="Saved Raketeers">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="MenuItem_SavedRaketeers_Tapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                    <Label Text="Reports"/>
+
+                </VerticalStackLayout>
+
+                <Border Grid.Row="2"
+                        BackgroundColor="#D6A24A"
+                        HeightRequest="40">
+
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="20"/>
+                    </Border.StrokeShape>
+
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Logout_Tapped"/>
+                    </Border.GestureRecognizers>
+
+                    <Label Text="Logout"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           FontAttributes="Bold"
+                           TextColor="White"/>
+
+                </Border>
+
+            </Grid>
+
+        </Border>
+
+    </Grid>
+
+</ContentPage>
