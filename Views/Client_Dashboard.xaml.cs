@@ -21,6 +21,11 @@ public partial class Client_Dashboard : ContentPage
         BackdropOverlay.IsVisible = false;
     }
 
+    private async void Notifications_Tapped(object sender, TappedEventArgs e)
+    {
+        await Navigation.PushAsync(new Views.Client_Notification());
+    }
+
     private async void RaketeerCard_Tapped(object sender, TappedEventArgs e)
     {
         await Navigation.PushAsync(new Views.Client_RaketeerWhenClicked());

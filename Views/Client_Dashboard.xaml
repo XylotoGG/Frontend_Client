@@ -191,7 +191,7 @@
                                    HeightRequest="24"/>
 
                             <Grid.GestureRecognizers>
-                                <!-- <TapGestureRecognizer Tapped="Notifications_Tapped"/> -->
+                                <TapGestureRecognizer Tapped="Notifications_Tapped"/>
                             </Grid.GestureRecognizers>
                         </Grid>
 
@@ -215,17 +215,15 @@
         </Grid>
 
         <!-- BACKDROP -->
-        <BoxView x:Name="BackdropOverlay"
-                 Color="Black"
-                 Opacity="0.4"
-                 IsVisible="False"
-                 InputTransparent="False">
+        <Grid x:Name="BackdropOverlay"
+              BackgroundColor="#66000000"
+              IsVisible="False">
 
-            <BoxView.GestureRecognizers>
+            <Grid.GestureRecognizers>
                 <TapGestureRecognizer Tapped="BackdropOverlay_Tapped"/>
-            </BoxView.GestureRecognizers>
+            </Grid.GestureRecognizers>
 
-        </BoxView>
+        </Grid>
 
         <!-- SIDE MENU -->
         <Border x:Name="MenuPanel"

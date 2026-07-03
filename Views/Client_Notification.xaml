@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend_Client.Views.Client_Notification"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid RowDefinitions="Auto,Auto,*,Auto" Padding="0">
+
+        <Grid Grid.Row="0"
+              Margin="16,20,0,10"
+              HorizontalOptions="Start">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Column="0"
+                   Source="backbutton.svg"
+                   WidthRequest="20"
+                   HeightRequest="20"
+                   VerticalOptions="Center"/>
+
+            <Label Grid.Column="1"
+                   Text="Back"
+                   Margin="6,0,0,0"
+                   FontSize="16"
+                   TextColor="Black"
+                   VerticalOptions="Center"/>
+
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="BackButton_Tapped"/>
+            </Grid.GestureRecognizers>
+
+        </Grid>
+
+        <Label Grid.Row="1"
+               Text="Notifications"
+               FontAttributes="Bold"
+               FontSize="18"
+               TextColor="#1B4D3E"
+               HorizontalOptions="Center"
+               Margin="0,0,0,10" />
+
+        <Border Grid.Row="2"
+                BackgroundColor="White"
+                Margin="16,0,16,16"
+                Padding="16">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="16" />
+            </Border.StrokeShape>
+
+            <Grid RowDefinitions="Auto,*">
+
+                <Grid Grid.Row="0" ColumnDefinitions="*,*" Margin="0,0,0,12">
+                    <Label Grid.Column="0"
+                           x:Name="ActivityTabLabel"
+                           Text="Activity"
+                           FontAttributes="Bold"
+                           TextColor="#1B4D3E"
+                           HorizontalOptions="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ActivityTab_Tapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label Grid.Column="1"
+                           x:Name="MessagesTabLabel"
+                           Text="Messages"
+                           TextColor="#8A8A8A"
+                           HorizontalOptions="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="MessagesTab_Tapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+
+                <ScrollView Grid.Row="1">
+                    <CollectionView x:Name="NotificationsList">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid ColumnDefinitions="Auto,*,Auto"
+                                      Padding="0,10"
+                                      ColumnSpacing="10">
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="NotificationItem_Tapped" CommandParameter="{Binding .}" />
+                                    </Grid.GestureRecognizers>
+
+                                    <Border Grid.Column="0"
+                                            WidthRequest="36"
+                                            HeightRequest="36"
+                                            StrokeShape="RoundRectangle 18"
+                                            BackgroundColor="#E6E6FA">
+                                        <Image Source="sampleimage.svg" Aspect="AspectFill" />
+                                    </Border>
+
+                                    <VerticalStackLayout Grid.Column="1" VerticalOptions="Center">
+                                        <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="13" TextColor="#1F1F1F" />
+                                        <Label Text="{Binding Message}" FontSize="11" TextColor="#8A8A8A" />
+                                    </VerticalStackLayout>
+
+                                    <Label Grid.Column="2" Text="&gt;" TextColor="#8A8A8A" VerticalOptions="Center" />
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </ScrollView>
+
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="3" BackgroundColor="#1B4D3E" HeightRequest="60" ColumnDefinitions="*,*,*,*">
+            <ImageButton Grid.Column="0" Source="home_icon.png" BackgroundColor="Transparent" WidthRequest="24" HeightRequest="24" />
+            <ImageButton Grid.Column="1" Source="devices_icon.png" BackgroundColor="Transparent" WidthRequest="24" HeightRequest="24" />
+            <ImageButton Grid.Column="2" Source="bell_icon.png" BackgroundColor="Transparent" WidthRequest="24" HeightRequest="24" />
+            <ImageButton Grid.Column="3" Source="settings_icon.png" BackgroundColor="Transparent" WidthRequest="24" HeightRequest="24" />
+        </Grid>
+
+    </Grid>
+</ContentPage>

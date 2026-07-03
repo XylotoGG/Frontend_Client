@@ -6,13 +6,33 @@
 
     <Grid RowDefinitions="Auto,*,Auto" Padding="0">
 
-        <HorizontalStackLayout Grid.Row="0" Margin="16,20,0,10" Spacing="4">
-            <Label Text="&lt;" FontSize="16" TextColor="#E4E7EB" />
-            <Label Text="Back" FontSize="14" TextColor="#E4E7EB" />
-            <HorizontalStackLayout.GestureRecognizers>
-                <TapGestureRecognizer Tapped="BackButton_Tapped" />
-            </HorizontalStackLayout.GestureRecognizers>
-        </HorizontalStackLayout>
+        <Grid Grid.Row="0"
+              Margin="16,20,0,10"
+              HorizontalOptions="Start">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Column="0"
+                   Source="backbutton.svg"
+                   WidthRequest="20"
+                   HeightRequest="20"
+                   VerticalOptions="Center"/>
+
+            <Label Grid.Column="1"
+                   Text="Back"
+                   Margin="6,0,0,0"
+                   FontSize="16"
+                   TextColor="Black"
+                   VerticalOptions="Center"/>
+
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="BackButton_Tapped"/>
+            </Grid.GestureRecognizers>
+
+        </Grid>
 
         <ScrollView Grid.Row="1" Padding="16,0,16,16">
             <Border StrokeShape="RoundRectangle 20" BackgroundColor="White" Padding="16">
