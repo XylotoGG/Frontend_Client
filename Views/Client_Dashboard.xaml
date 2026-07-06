@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Frontend_Client.Views.Client_Dashboard"
-             NavigationPage.HasNavigationBar="False">
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#F1F0EC">
 
     <Grid>
 
@@ -10,13 +11,9 @@
         <Grid RowDefinitions="Auto,*">
 
             <Border Grid.Row="1"
-                    BackgroundColor="White"
+                    BackgroundColor="#F1F0EC"
                     Stroke="Transparent"
                     Margin="0">
-
-                <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="24,24,0,0"/>
-                </Border.StrokeShape>
 
                 <Grid RowDefinitions="Auto,Auto,*,Auto">
 

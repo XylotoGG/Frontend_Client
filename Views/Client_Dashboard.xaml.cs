@@ -33,7 +33,7 @@ public partial class Client_Dashboard : ContentPage
 
     private async void MenuItem_Activity_Tapped(object sender, TappedEventArgs e)
     {
-        await Navigation.PushAsync(new Views.Client.ClientNotification());
+        //await Navigation.PushAsync(new Views.Client.ClientNotification());
     }
 
     private async void MenuItem_Profile_Tapped(object sender, TappedEventArgs e)
@@ -43,12 +43,12 @@ public partial class Client_Dashboard : ContentPage
 
     private async void MenuItem_MyRaketRequest_Tapped(object sender, TappedEventArgs e)
     {
-        await Navigation.PushAsync(new Views.Client.MyRaketRequests());
+        //await Navigation.PushAsync(new Views.Client.MyRaketRequests());
     }
 
     private async void MenuItem_SavedRaketeers_Tapped(object sender, TappedEventArgs e)
     {
-        await Navigation.PushAsync(new Views.Client.SavedRaketeers());
+        await Navigation.PushAsync(new Views.Client_SavedRaketeer());
     }
 
     private async void Logout_Tapped(object sender, TappedEventArgs e)

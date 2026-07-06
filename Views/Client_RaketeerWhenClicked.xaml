@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Frontend_Client.Views.Client_RaketeerWhenClicked"
-             NavigationPage.HasNavigationBar="False">
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#F1F0EC">
 
     <Grid RowDefinitions="Auto,*,Auto" Padding="0">
 
@@ -66,11 +67,76 @@
             </Border>
         </ScrollView>
 
-        <Grid Grid.Row="2" BackgroundColor="#1B4D3E" HeightRequest="60" ColumnDefinitions="*,*,*,*">
-            <ImageButton Grid.Column="0" Source="home_icon.png" BackgroundColor="Transparent" WidthRequest="24" HeightRequest="24" />
-            <ImageButton Grid.Column="1" Source="devices_icon.png" BackgroundColor="Transparent" WidthRequest="24" HeightRequest="24" />
-            <ImageButton Grid.Column="2" Source="bell_icon.png" BackgroundColor="Transparent" WidthRequest="24" HeightRequest="24" />
-            <ImageButton Grid.Column="3" Source="settings_icon.png" BackgroundColor="Transparent" WidthRequest="24" HeightRequest="24" />
+        <!-- BOTTOM NAV -->
+        <Grid Grid.Row="3"
+              HeightRequest="60"
+              BackgroundColor="#1B4D3E"
+              ColumnDefinitions="*,*,*,*">
+
+            <!-- Home -->
+            <Grid Grid.Column="0"
+                  HorizontalOptions="Center"
+                  VerticalOptions="Center"
+                  WidthRequest="40"
+                  HeightRequest="40">
+
+                <Image Source="home.svg"
+                       WidthRequest="20"
+                       HeightRequest="20"/>
+
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Home_Tapped"/>
+                </Grid.GestureRecognizers>
+            </Grid>
+
+            <!-- Inbox -->
+            <Grid Grid.Column="1"
+                  HorizontalOptions="Center"
+                  VerticalOptions="Center"
+                  WidthRequest="40"
+                  HeightRequest="40">
+
+                <Image Source="inbox.svg"
+                       WidthRequest="24"
+                       HeightRequest="24"/>
+
+                <Grid.GestureRecognizers>
+                    <!-- <TapGestureRecognizer Tapped="Inbox_Tapped"/> -->
+                </Grid.GestureRecognizers>
+            </Grid>
+
+            <!-- Notifications -->
+            <Grid Grid.Column="2"
+                  HorizontalOptions="Center"
+                  VerticalOptions="Center"
+                  WidthRequest="40"
+                  HeightRequest="40">
+
+                <Image Source="notifications.svg"
+                       WidthRequest="24"
+                       HeightRequest="24"/>
+
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Notifications_Tapped"/>
+                </Grid.GestureRecognizers>
+            </Grid>
+
+            <!-- Settings -->
+            <Grid Grid.Column="3"
+                  HorizontalOptions="Center"
+                  VerticalOptions="Center"
+                  WidthRequest="40"
+                  HeightRequest="40">
+
+                <Image Source="settings.svg"
+                       WidthRequest="20"
+                       HeightRequest="20"/>
+
+                <Grid.GestureRecognizers>
+                    <!-- <TapGestureRecognizer Tapped="Settings_Tapped"/> -->
+                </Grid.GestureRecognizers>
+            </Grid>
+
         </Grid>
     </Grid>
 </ContentPage>
